@@ -11,5 +11,6 @@ class ExceptionHandler extends ExceptionHandler_parent
     public function handleUncaughtException(\Exception $exception)
     {
         $this->reportToSentry($exception);
+        parent::handleUncaughtException($exception);
     }
 }

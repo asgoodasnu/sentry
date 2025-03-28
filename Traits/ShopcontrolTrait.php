@@ -12,9 +12,25 @@ trait ShopcontrolTrait
     {
         $sentryUrl = Registry::getConfig()->getConfigParam('oxpsSentryPhpUrl');
         if ($sentryUrl != '' && function_exists('Sentry\init')) {
+            $level = Registry::getConfig()->getConfigParam('oxpsSentryLogLevel');
+            switch ($level) {
+                case 'error':
+                    $errorTypes = E_ERROR | E_USER_ERROR;
+                    break;
+                case 'warning':
+                    $errorTypes = E_WARNING | E_USER_WARNING;
+                    break;
+                case 'notice':
+                case 'info':
+                    $errorTypes = E_NOTICE | E_USER_NOTICE;
+                    break;
+                case 'debug':
+                    $errorTypes = E_ALL;
+            }
             init([
                 'dsn'         => $sentryUrl,
-                'environment' => Registry::getConfig()->getConfigParam('oxpsSentryEnvirnoment'),
+                'error_types' => $errorTypes,
+                'environment' => Registry::getConfig()->getConfigParam('oxpsSentryEnvironment'),
                 'http_proxy'  => Registry::getConfig()->getConfigParam('oxpsSentryProxy') ?: null,
             ]);
         }

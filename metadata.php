@@ -25,7 +25,7 @@ $aModule = [
     'settings'    => [
         [
             'group' => 'main',
-            'name'  => 'oxpsSentryEnvirnoment',
+            'name'  => 'oxpsSentryEnvironment',
             'type'  => 'str',
             'value' => ''
         ],
@@ -52,7 +52,7 @@ $aModule = [
             'name'        => 'oxpsSentryLogLevel',
             'type'        => 'select',
             'value'       => 'none',
-            'constraints' => 'none|emergency|alert|critical|error|warning|notice|info|debug',
+            'constraints' => 'none|error|warning|notice|info|debug',
         ],
     ],
 ];

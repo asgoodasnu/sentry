@@ -4,13 +4,13 @@ $sMetadataVersion = '2.1';
 
 $aModule = [
     'id'          => 'oxpssentry',
-    'title'       => 'OXPS :: sentry integration',
+    'title'       => 'asgoodasnew :: sentry integration',
     'description' => [
         'de' => 'Sentry Schnittstelle für OXID',
         'en' => 'sentry integration for OXID',
     ],
     'thumbnail'   => 'out/pictures/oxpssentry.png',
-    'version'     => '1.0.3',
+    'version'     => '1.2.0',
     'author'      => 'OXID Professional Services',
     'url'         => 'http://www.oxid-esales.com',
     'email'       => 'info@oxid-esales.com',
